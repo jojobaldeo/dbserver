@@ -1,0 +1,6 @@
+//
+// File Checksum Integrity Verifier version 2.05.
+//
+		MD5				SHA-1
+-------------------------------------------------------------------------
+b52450dd5ba8007e2934f5c6e6eda0ce d4b28f350981a7c3306dd409b172aea10d8599ac server2012.iso

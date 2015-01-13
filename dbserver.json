@@ -1,0 +1,39 @@
+{
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "iso_url": "./iso/server2012.iso",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "b52450dd5ba8007e2934f5c6e6eda0ce",
+      "headless": true,
+      "boot_wait": "2m",
+      "ssh_username": "chef",
+      "ssh_password": "chef1234",
+      "ssh_wait_timeout": "4h",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "guest_os_type": "Windows2012_64",
+      "disk_size": 61440,
+      "floppy_files": [
+        "./answer_files/2012_r2/Autounattend.xml",
+        "./scripts/microsoft-updates.bat",
+        "./scripts/win-updates.ps1",
+        "./scripts/openssh.ps1",
+        "./scripts/oracle-cert.cer"
+      ],
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "2048"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "2"
+        ]
+      ]
+    }
+  ]
+}
