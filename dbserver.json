@@ -36,10 +36,9 @@
         [
           "modifyvm",
           "{{.Name}}",
-          "--nic<1>",
-          "bridged"
-        ]
-      ]
+          "--natpf1",
+          "guestssh,tcp,,6226,22"
+        ],
     }
   ],
   "provisioners": [
