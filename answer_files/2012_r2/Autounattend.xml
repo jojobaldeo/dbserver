@@ -13,7 +13,7 @@
             <CreatePartition wcm:action="add">
               <Order>1</Order>
               <Type>Primary</Type>
-              <Size>10000</Size>
+              <Size>25000</Size>
             </CreatePartition>
           </CreatePartitions>
 
@@ -224,7 +224,7 @@
         <HelpCustomized>false</HelpCustomized>
       </OEMInformation>
       <!-- Rename computer here. -->
-      <ComputerName>vagrant-2012</ComputerName>
+      <ComputerName>INDYCHEF</ComputerName>
       <TimeZone>Pacific Standard Time</TimeZone>
       <RegisteredOwner></RegisteredOwner>
     </component>

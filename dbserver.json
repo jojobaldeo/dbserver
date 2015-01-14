@@ -9,6 +9,7 @@
       "boot_wait": "2m",
       "ssh_username": "caas",
       "ssh_password": "password",
+      "ssh_port": "22",
       "ssh_wait_timeout": "4h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "guest_os_type": "Windows2012_64",
@@ -32,17 +33,13 @@
           "{{.Name}}",
           "--cpus",
           "2"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--natpf1",
-          "guestssh,tcp,,6226,22"
-        ],
+        ]
+
+      ]
     }
   ],
-  "provisioners": [
-    {
+      "provisioners": [
+     {
       "type": "shell",
       "remote_path": "/tmp/script.bat",
       "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
